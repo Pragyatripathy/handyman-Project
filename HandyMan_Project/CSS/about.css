@@ -1,0 +1,61 @@
+/* Main content styling */
+main {
+  padding: 20px;
+  background-color: #f8f8f8; 
+  font-family: 'Arial', sans-serif; 
+}
+
+/* About section styling */
+.about-section {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 20px; 
+
+.about-main-section {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px; 
+}
+
+.about-sub-section {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5; 
+  margin-bottom: 10px; 
+}
+
+/* Features list styling */
+.feature {
+  font-size: 26px;
+  color: #333; 
+  margin-bottom: 15px; 
+  font-weight: bold;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.feature_subtopic {
+  font-size: 20px;
+  color: #555; 
+  margin-bottom: 20px; 
+  font-weight: bold;
+}
+
+.feature_para {
+  font-size: 16px;
+  color: #666; 
+  line-height: 1.5; 
+  margin-bottom: 15px; 
+  margin-top: 15px; 
+}
+
+/* General styling */
+h2, h3 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px; 
+}

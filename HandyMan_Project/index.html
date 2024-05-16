@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handyman Services Luxembourg</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+  </head>
+  <body>
+    <!-- including the navbar by ajax -->
+    <nav id="main-navbar"></nav>
+    
+      <!-- SubMain -->
+        <h2   id="services">Our Services</h2>
+        <p class="content">Welcome to our range of professional services.Our mission is to work with individuals and professionals to carry out renovation, repair, cleaning and maintenance work. We want to provide the best handyman service in Luxembourg, at a reasonable price, without sacrificing quality. You will be satisfied with our work knowing that we are taking the necessary steps to meet your needs and do the job well.</p>
+
+        <div class="service-container">
+           <div class="service">
+             <img src="./images/electrician.avif" alt="Electrician">
+             <button class="details-button" data-role="electrician">Electrician</button>
+            
+           </div>
+           <div class="service">
+             <img src="./images/plumber.jpg" alt="Plumber">
+             <button class="details-button" data-role="plumber">Plumber</button>
+           </div>
+           <div class="service">
+             <img src="./images/garderner.jpg" alt="Gardener">
+             <button class="details-button" data-role="garderner">Gardener</button>
+           </div>
+        </div>
+
+        <div class="service-container">
+          <div class="service">
+            <img src="./images/cleaning.jpg" alt="Cleaning">
+            <button class="details-button" data-role="cleaning">Cleaning</button>
+          </div>
+          <div class="service">
+            <img src="./images/babysitter.jpg" alt="Babysitter">
+            <button class="details-button" data-role="babysitter">Babysitter</button>
+          </div>
+          <div class="service">
+             <img src="./images/wallpainter.webp" alt="Babysitter">
+             <button class="details-button" data-role="painter">Painter</button>
+          </div>
+        </div>
+<!-- SubMain --> 
+    </main>
+     <!-- Main content Finish -->
+
+    <!-- footer start -->
+    <!-- including the footer by ajax -->
+    <footer id="footer"></footer>
+   
+      
+      <script>
+          // Include navbar
+          fetch('nav.php', {
+            method: 'get',
+        }).then(res => res.text())
+            .then(function (result) {
+                document.getElementById('main-navbar').innerHTML = result;
+            });
+        // Add click event listener to each button
+        document.querySelectorAll('.details-button').forEach(function(button) {
+            button.addEventListener('click', function() {
+                // Retrieve the service role from the data attribute
+                const role = button.getAttribute('data-role');
+                
+                // Redirect to the details page with the role query parameter
+                window.location.href = `service-details.html?role=${role}`;
+            });
+        });
+
+        fetch('footer.php', {
+            method: 'get',
+        }).then(res => res.text())
+            .then(function (result) {
+                document.getElementById('footer').innerHTML = result;
+            });
+    </script>
+ </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work-with-us</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/work-with-us.css" />
+  </head>
+  <body>
+    <nav id="main-navbar"></nav>
+    <div>
+      <div class="clean">Keep Your Place Clean & Fresh</div>
+      <div class="clean">Apply Now</div>
+      <p id="message"></p>
+      <form method="POST" id="formId">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" name="name" placeholder="Name" id="name" />
+        </div>
+
+        <div>
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            name="email"
+            placeholder="name@domain.com"
+            id="email"
+          />
+        </div>
+
+        <div>
+          <label for="address">Address:</label>
+          <input
+            type="text"
+            name="address"
+            placeholder="address"
+            id="address"
+          />
+        </div>
+
+        <div>
+          <label for="phone_number">Phone Number:</label>
+          <input
+            type="number"
+            name="phone_number"
+            placeholder="phone_number"
+            id="phone_number"
+          />
+        </div>
+
+        <div>
+          <label for="role">Role Applying for?:</label>
+          <select name="role" id="role">
+            <option value="">Select a role...</option>
+            <option value="electrician">Electrician</option>
+            <option value="plumber">Plumber</option>
+            <option value="cleaning">Cleaning</option>
+            <option value="babysitter">Babysitter</option>
+            <option value="painter">Painter</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message">Your Message:</label><br />
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Enter your message here..."
+            maxlength="500"
+          ></textarea
+          ><br />
+        </div>
+        <input name="insertBtn" type="submit" value="Apply" />
+      </form>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+      // Include navbar
+      fetch("nav.php", {
+        method: "get",
+      })
+        .then((res) => res.text())
+        .then(function (result) {
+          document.getElementById("main-navbar").innerHTML = result;
+        });
+
+      //Insert service man when submit
+
+      document
+        .querySelector("form")
+        .addEventListener("submit", function (event) {
+          // Prevent the page to 'refresh'
+          event.preventDefault();
+          let form = this;
+
+          fetch("new-service.php", {
+            method: "post",
+            body: new FormData(form),
+          })
+            .then((res) => res.text())
+            .then(function (result) {
+              // Once AJAX call is done
+              console.log(result);
+              document.getElementById("message").innerHTML = result;
+            });
+        });
+
+      //include footer
+      fetch("footer.php", {
+        method: "get",
+      })
+        .then((res) => res.text())
+        .then(function (result) {
+          console.log(result);
+          document.getElementById("footer").innerHTML = result;
+        });
+    </script>
+  </body>
+</html>

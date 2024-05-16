@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2; /* Light Gray */
+}
+
+
+/* Styling for the form */
+form {
+  max-width: 600px; /* Width of the form */
+  margin: 20px auto; /* Center the form */
+  padding: 20px;
+  border-radius: 5px;
+  background-color:white; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for form */
+  margin-bottom: 40px;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  /* background-color: blueviolet; */
+}
+
+form input, form select, form textarea {
+  width: 100%; /* Full width */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc; /* Light gray border */
+}
+
+form input[type="submit"] {
+  background-color: #34495e; /* Dark Blue */
+  color: #ffffff; /* White text */
+  border: none;
+  padding: 10px 20px; /* Padding for the button */
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #f39c12; /* Orange on Hover */
+}
+
+.clean {
+  color:#34495e;
+  font-weight: bold;
+  font-size: 30px;
+   text-align: center; 
+   /* padding-bottom: 0px; */
+   /* margin-bottom: 0; */
+    margin-top: 30px; 
+}
+
+.success {
+   color: green;
+   text-align: center;
+   font-weight: bold;
+  
+}
+/* h2 {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0px;
+  /* color: #333; */
+  color:#34495e ;
+  font-size: 30px;
+} */
+

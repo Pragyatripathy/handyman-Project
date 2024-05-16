@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Handywork</title>
+    
+    <link rel="stylesheet" href="CSS/style.css"/>
+    <link rel="stylesheet" href="CSS/about.css"/>
+   
+    
+  </head>
+  <body>
+  <!-- including the navbar by ajax -->
+    <nav id="main-navbar"></nav>
+    <!--Finish header -->
+    <main>
+      <section class="about-section">
+        <h2 class="about-main-section">About Handywork</h2>
+        <p class="about-sub-section">
+          Handywork is your trusted hub for all things crafty and
+          do-it-yourself. Whether you're a seasoned crafter or just starting
+          out, we have something for everyone.
+        </p>
+        <p class="about-sub-section">
+          Our mission is to inspire creativity and empower individuals to
+          explore their passions through various projects, tutorials, and
+          resources.
+        </p>
+      </section>
+       
+       <h2 class="feature">Features:</h2> 
+       <h3 class="feature_subtopic">1.Comprehensive Services:</h3>
+
+       <p class="feature_para">Offer a wide range of services, from cleaning and childcare to painting, gardening, plumbing, and electrical work, making it easy for clients to find all the help they need in one place.</p>
+           
+       <h3 class="feature_subtopic">2.Qualified Professionals:</h3>
+
+       <p class="feature_para"> Ensure your team members are skilled, experienced, and certified in their respective areas, providing clients with confidence in the quality and safety of your services.</p>
+           
+        <h3 class="feature_subtopic">3.Convenient Booking:</h3>
+
+        <p class="feature_para">Offer easy online booking and scheduling options, allowing clients to quickly request services at times that work best for them.</p>
+             
+         <h3 class="feature_subtopic">4.Customizable Packages:</h3>
+
+         <p class="feature_para">Provide customizable service packages tailored to each client's specific needs, whether it's a one-time task or ongoing maintenance.</p>
+             
+           <h3 class="feature_subtopic">5.Transparent Pricing:</h3>
+
+           <p class="feature_para">Maintain clear and upfront pricing for each service, including any potential additional costs, so clients know what to expect from the start.</p>
+               
+            <h3 class="feature_subtopic">6.Customer Support:</h3>
+
+            <p class="feature_para">Offer responsive customer support to answer questions and resolve issues promptly, ensuring a smooth and positive experience for clients.</p>
+
+         <h3 class="feature_subtopic">7.Safety and Trust:</h3>
+
+         <p class="feature_para">Prioritize safety in all services, from background-checked staff to adherence to industry standards, giving clients peace of mind.</p>
+
+         <h3 class="feature_subtopic">8.Testimonials and Reviews:</h3>
+
+         <p class="feature_para">Share positive customer reviews and testimonials on your website to showcase the quality and reliability of your services.</p>
+
+        <h3 class="feature_subtopic">9.Sustainable Practices:</h3>
+
+        <p class="feature_para">Consider using eco-friendly products and materials, particularly in cleaning, gardening, and painting services, to appeal to environmentally-conscious clients.</p>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer id="footer"></footer>
+      <script> // Include navbar
+        fetch('shortnav.php', {
+          method: 'get',
+      }).then(res => res.text())
+          .then(function (result) {
+              document.getElementById('main-navbar').innerHTML = result;
+          });
+
+          fetch('footer.php', {
+            method: 'get',
+        }).then(res => res.text())
+            .then(function (result) {
+                document.getElementById('footer').innerHTML = result;
+            });
+          
+          
+          
+          </script>
+  </body>
+</html>
